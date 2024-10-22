@@ -10,7 +10,6 @@ export const getWeatherInformation = selector({
         try {
             const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHERAPI}&q=${city}&aqi=yes`);
             const data = await response.json();
-
             return data;
         } catch (error) {
             console.log(error);
