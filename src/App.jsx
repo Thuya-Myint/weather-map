@@ -7,6 +7,8 @@ import { weatherState } from './state/atom';
 import { searchState } from './state/atom';
 import TemperatureComponent from './components/TemperatureComponent';
 import ChangeName from './components/ChangeName';
+import 'leaflet/dist/leaflet.css';
+
 
 const App = () => {
     const setWeather = useSetRecoilState(weatherState)
