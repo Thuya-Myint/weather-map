@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.leaflet-container {
+    z-index: 1 !important; /* Ensuring the map has a lower z-index */
+}
+.overlay {
+    z-index: 50 !important; /* Ensuring the white div is above the map */
+}
+@font-face {
+    font-family: 'font-sat';
+    src: url('assets/font/saturnest/Saturnest\ Bold.otf');
+}
+.font-sat{
+    font-family: 'font-sat','Courier New', Courier, monospace;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'font-apple-li';
+    src: url('assets/font/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf');
+}
+.font-apple-li{
+    font-family: 'font-apple-li','Courier New', Courier, monospace;
+}
+.bg-glass{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
