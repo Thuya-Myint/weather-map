@@ -17,15 +17,16 @@ const ChangeName = () => {
             lon: weather?.contents?.location?.lon
         })
     }, [weather])
-    const handleSearch = () => {
-        if (cityIn.trim() === '') return
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (cityIn.trim() === '') return;
         SetCurrentCity(cityIn);
+        setCityIn('');
         console.log(weather?.contents)
-
         setSearch(false);
     }
     return (
-        <div className=' cursor-pointer w-[710px] h-[50px] z-50 bg-white shadow-gray-300 rounded-md shadow-sm absolute top-[2%] left-[18%]  flex items-center p-1 gap-2 justify-evenly'>
+        <form className=' cursor-pointer w-[710px] h-[50px] z-50 bg-white shadow-gray-300 rounded-md shadow-sm absolute top-[2%] left-[18%]  flex items-center p-1 gap-2 justify-evenly' onSubmit={(e) => handleSearch(e)}>
             <div className='w-[10%] h-full flex items-center justify-center bg-black bg-opacity-20 rounded-sm'>
                 <MdOutlineScreenSearchDesktop className='text-2xl' />
             </div>
@@ -33,10 +34,9 @@ const ChangeName = () => {
                 <input value={cityIn} type="text" className='w-full bg-transparent font-sat border-b-2 outline-none p-1' placeholder='Enter City Name to Search?' onChange={(e) => setCityIn(e.target.value)} onFocus={() => setSearch(true)} />
             </div>
             <div className='w-[10%] h-full flex items-center justify-center font-sat'>
-                <button className='w-[100%] h-full flex items-center justify-center rounded-md bg-skyBlue' onClick={handleSearch}>Search</button>
+                <button className='w-[100%] h-full flex items-center justify-center rounded-md bg-skyBlue' >Search</button>
             </div>
-
-        </div>
+        </form>
     )
 }
 

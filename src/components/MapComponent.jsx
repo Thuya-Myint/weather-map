@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import { latLonState } from '../state/atom';
 import { useRecoilValue } from 'recoil';
 import { cityState } from '../state/atom';
+import L from 'leaflet';
+import customPin from '../assets/pin/customPin2-removebg-preview.png';
 
 const MapUpdater = ({ lat, lon }) => {
     const map = useMap();
@@ -20,6 +22,13 @@ const MapComponent = () => {
     const mapTilerAPIKey = import.meta.env.VITE_MAPTILER_API_KEY;
     const { lat, lon } = useRecoilValue(latLonState)
     const city = useRecoilValue(cityState);
+    const customIcon = L.icon({
+        iconUrl: customPin,
+        iconSize: [50, 50],
+        iconAnchor: [0, 45],
+        popupAnchor: [25, -25],
+    });
+
     return (
         <div className='w-screen h-screen '>
             <MapContainer center={[lat, lon]} zoom={13} style={{ height: '100vh', width: '100%', zIndex: '1' }}>
@@ -29,7 +38,7 @@ const MapComponent = () => {
                 />
                 {lat && lon && (
                     <>
-                        <Marker position={[lat, lon]}>
+                        <Marker position={[lat, lon]} icon={customIcon}>
                             <Popup>
                                 You are here: [{lat}, {lon},{city}]
                             </Popup>
