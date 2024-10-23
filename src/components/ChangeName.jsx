@@ -26,7 +26,7 @@ const ChangeName = () => {
         setSearch(false);
     }
     return (
-        <form className=' cursor-pointer lg:w-[710px] lg:h-[50px] h-[40px] z-50 bg-white shadow-gray-300 rounded-md shadow-sm absolute top-[2%] lg:left-[18%] left-[50px] lg:mr-0 mr-1  flex items-center p-1 gap-2 justify-evenly' onSubmit={(e) => handleSearch(e)}>
+        <form className=' cursor-pointer lg:w-[710px] lg:h-[50px] h-[40px] w-[85%] z-50 bg-white shadow-gray-300 rounded-md shadow-sm absolute top-[2%] lg:left-[18%] left-[50px]   flex items-center p-1 gap-2 justify-evenly' onSubmit={(e) => handleSearch(e)}>
             <div className='w-[10%] lg:flex hidden h-full  items-center justify-center bg-black bg-opacity-20 rounded-sm'>
                 <MdOutlineScreenSearchDesktop className='text-2xl' />
             </div>
