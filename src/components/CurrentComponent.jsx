@@ -37,7 +37,7 @@ const CurrentComponent = () => {
     }
     return (
 
-        <div className={`transition-all duration-500 ${detail ? 'lg:h-[70vh] h-[82vh]' : 'lg:h-[35vh] h-[40vh]'} cursor-pointer lg:w-[30vw] w-full lg:z-[90]  bg-white lg:shadow-gray-300 rounded-md shadow-sm shadow-black absolute lg:top-[2%] lg:left-[69%] ${phExpand ? 'left-0' : 'left-[100%]'}  top-[0%]  p-1  z-[100]`}>
+        <div className={`transition-all duration-500 ${detail ? ' h-[82vh]' : 'lg:h-[35vh] h-[40vh]'} cursor-pointer lg:w-[30vw] w-full lg:z-[90]  bg-white lg:shadow-gray-300 rounded-md shadow-sm shadow-black absolute lg:top-[2%] lg:left-[69%] ${phExpand ? 'left-0' : 'left-[100%]'}  top-[0%]  p-1  z-[100]`}>
             <div className={`transition-all duration-300 absolute lg:hidden block ${phExpand ? 'top-[102%] left-[43%] z-[120] bg-opacity-60' : ' top-[25%] left-[-15%] bg-opacity-40'}  bg-black  rounded-full`} onClick={() => setPhExpand(!phExpand)}> <img src={weather?.contents?.current?.condition.icon} alt="" className='w-[40px] h-[40px]' /></div>
 
             {
